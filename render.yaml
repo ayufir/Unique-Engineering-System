@@ -12,19 +12,19 @@ services:
       - key: PORT
         value: 5000
       - key: MONGO_URI
-        fromConfig: true
+        value: placeholder_change_me
       - key: JWT_SECRET
         generateValue: true
       - key: FRONTEND_URL
         value: https://banker-frontend.onrender.com
       - key: IMAGEKIT_URL_ENDPOINT
-        fromConfig: true
+        value: placeholder_change_me
       - key: IMAGEKIT_PRIVATE_KEY
-        fromConfig: true
+        value: placeholder_change_me
       - key: IMAGEKIT_PUBLIC_KEY
-        fromConfig: true
+        value: placeholder_change_me
       - key: GEMINI_API_KEY
-        fromConfig: true
+        value: placeholder_change_me
 
   # Frontend Static Site
   - type: web
