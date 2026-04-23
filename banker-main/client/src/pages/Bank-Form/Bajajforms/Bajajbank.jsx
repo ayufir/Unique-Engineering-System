@@ -1192,7 +1192,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { finalUpdate } from '../../../redux/features/case/caseThunks';
 import toast from 'react-hot-toast';
 
-const API = 'http://localhost:5000/api';
+const API = `${import.meta.env.VITE_API_URL}/api`;
 
 // ==================== HELPER FUNCTIONS ====================
 const readFileAsDataUrl = (file) =>

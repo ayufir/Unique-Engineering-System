@@ -1,0 +1,37 @@
+services:
+  # Backend Web Service
+  - type: web
+    name: banker-backend
+    env: node
+    rootDir: Backend
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 5000
+      - key: MONGO_URI
+        fromConfig: true # User will need to provide this in Render dashboard
+      - key: JWT_SECRET
+        generateValue: true
+      - key: FRONTEND_URL
+        value: https://banker-frontend.onrender.com # Change this if needed
+      - key: IMAGEKIT_URL_ENDPOINT
+        fromConfig: true
+      - key: IMAGEKIT_PRIVATE_KEY
+        fromConfig: true
+      - key: IMAGEKIT_PUBLIC_KEY
+        fromConfig: true
+      - key: GEMINI_API_KEY
+        fromConfig: true
+
+  # Frontend Static Site
+  - type: static
+    name: banker-frontend
+    rootDir: client
+    buildCommand: npm install && npm run build
+    publishDir: dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://banker-backend.onrender.com # Backend URL
