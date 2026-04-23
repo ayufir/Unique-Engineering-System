@@ -2,6 +2,7 @@ services:
   # Backend Web Service
   - type: web
     name: banker-backend
+    plan: free
     env: node
     rootDir: banker-main/Backend
     buildCommand: npm install
@@ -29,6 +30,7 @@ services:
   # Frontend Static Site
   - type: web
     name: banker-frontend
+    plan: free
     env: static
     rootDir: banker-main/client
     buildCommand: npm install && npm run build
