@@ -28,13 +28,11 @@ services:
         value: placeholder_change_me
 
   # Frontend Static Site
-  - type: web
+  - type: static
     name: banker-frontend
-    plan: free
-    env: static
     rootDir: banker-main/client
     buildCommand: npm install && npm run build
-    staticPublishPath: dist
+    publishDir: dist
     envVars:
       - key: VITE_API_URL
         value: https://banker-backend.onrender.com
